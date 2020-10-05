@@ -31,7 +31,15 @@ def reverse_data(data: list = None):
 
 def delete_nth_from_stack(data: Stack, position: int) -> Stack:
     # TODO: Supprimer le énième (position) élément de data et retourner la nouvelle structure de données.
-    return Stack()
+    result = Stack()
+
+    for i in range(len(data)):  # Stack donc on part de la fin jusqu'au début
+        if i == len(data) - position :
+            data.get()
+        else :
+            result.put(data.get())
+
+    return [result.get() for _ in range(len(result))]
 
 
 def delete_nth_from_queue(data: Queue, position: int) -> Queue:
@@ -75,7 +83,7 @@ def main() -> None:
 
     lifo = Stack()
     lifo.put_many([randint(0, 1000) for _ in range(20)])
-    print(f"On ordonne une file: {sort_queue(lifo)}")
+    print(f"On ordonne une file: {sort_stack(lifo)}")
 
     fifo = Queue()
     fifo.put_many([randint(0, 1000) for _ in range(20)])
