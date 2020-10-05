@@ -4,16 +4,27 @@
 from random import randint
 from structs import Queue, Stack
 
+from random import randint
+from structs import Queue, Stack
+
 
 def reverse_data(data: list = None):
     # TODO: Demander 10 valeurs à l'utilisateur,
     # les stocker dans une structure de données,
     # et les retourner en ordre inverse, sans utiliser de liste.
+    # On utilise une pile (Stack) ici
 
     if data is None:
-        pass  # Demander les valeurs ici
+        # Demander les valeurs ici
+        data = Stack()
+        for i in range(10):
+            data.put(int(input('Entrer un nombre : ')))
 
-    reversed_data = None  # Stocker le résultat ici
+    reversed_data = Stack()
+
+    # Stocker le résultat ici
+    for i in range (len(data)):
+        reversed_data.put(data.get(i))
 
     return reversed_data
 
